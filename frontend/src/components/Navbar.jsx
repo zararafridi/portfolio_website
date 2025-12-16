@@ -1,10 +1,10 @@
-import React from 'react';
-import { NavLink } from 'react-router-dom';
-import { MessageCircle } from 'lucide-react';
+import React from "react";
+import { NavLink } from "react-router-dom";
+import { MessageCircle } from "lucide-react";
 
 function Navbar() {
-  const baseLinkStyle = 'hover:text-purple-600 transition cursor-pointer';
-  const activeLinkStyle = 'text-purple-700 font-semibold';
+  const baseLinkStyle = "hover:text-purple-600 transition cursor-pointer";
+  const activeLinkStyle = "text-purple-700 font-semibold";
 
   return (
     <nav className="relative flex items-center justify-center px-20 py-4 bg-gradient-to-br from-white to-purple-50 shadow-md">
@@ -19,7 +19,7 @@ function Navbar() {
           <NavLink
             to="/"
             className={({ isActive }) =>
-              `${baseLinkStyle} ${isActive ? activeLinkStyle : ''}`
+              `${baseLinkStyle} ${isActive ? activeLinkStyle : ""}`
             }
           >
             Home
@@ -27,9 +27,19 @@ function Navbar() {
         </li>
         <li>
           <NavLink
+            to="/projects"
+            className={({ isActive }) =>
+              `${baseLinkStyle} ${isActive ? activeLinkStyle : ""}`
+            }
+          >
+            Projects
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
             to="/about"
             className={({ isActive }) =>
-              `${baseLinkStyle} ${isActive ? activeLinkStyle : ''}`
+              `${baseLinkStyle} ${isActive ? activeLinkStyle : ""}`
             }
           >
             About
@@ -39,30 +49,38 @@ function Navbar() {
           <NavLink
             to="/contact"
             className={({ isActive }) =>
-              `${baseLinkStyle} ${isActive ? activeLinkStyle : ''}`
+              `${baseLinkStyle} ${isActive ? activeLinkStyle : ""}`
             }
           >
             Contact
           </NavLink>
         </li>
+
+        {/* ✅ Resume link (External, PDF) */}
         <li>
-          <NavLink
-            to="/projects"
-            className={({ isActive }) =>
-              `${baseLinkStyle} ${isActive ? activeLinkStyle : ''}`
-            }
+          <a
+            href="/zararCV.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-purple-600 transition cursor-pointer"
           >
-            Projects
-          </NavLink>
+            Resume
+          </a>
         </li>
       </ul>
 
       {/* Chat Icon - right */}
-      <div className=" absolute right-20">
-        <button className="text-purple-700 hover:text-purple-900 transition">
-          <MessageCircle size={28} />
-        </button>
-      </div>
+      {/* Chat Icon - right (linked to Contact) */}
+<div className="absolute right-20">
+  <NavLink
+    to="/contact"
+    className="text-purple-700 hover:text-purple-900 transition"
+    title="Contact Me"
+  >
+    <MessageCircle className=" cursor-pointer" size={28} />
+  </NavLink>
+</div>
+
     </nav>
   );
 }
