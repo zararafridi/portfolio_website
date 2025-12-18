@@ -1,7 +1,33 @@
 import React from "react";
+import { useRef } from "react";
+import emailjs from "@emailjs/browser";
 import { FaEnvelope, FaMapMarkerAlt, FaGithub, FaLinkedin } from "react-icons/fa";
 
 function Contact() {
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "service_muv5dmd",
+        "template_bvmrkvw",
+        form.current,
+        "37P4K2_YeUKMnr524"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+          alert("Message sent successfully!");
+        },
+        (error) => {
+          console.log(error.text);
+          alert("Failed to send message.");
+        }
+      );
+  };
+
   return (
     <section className="min-h-screen bg-white py-16 px-4 md:px-20" id="contact">
       {/* Header */}
@@ -16,13 +42,14 @@ function Contact() {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
         {/* Contact Form */}
         <div className="bg-slate-50 p-8 rounded-2xl shadow-lg">
-          <form className="flex flex-col gap-6">
+          <form ref={form} onSubmit={sendEmail} className="flex flex-col gap-6">
             <div>
               <label htmlFor="name" className="block font-medium text-slate-700 mb-2">
                 Name
               </label>
               <input
                 type="text"
+                name="name"
                 id="name"
                 placeholder="Your Name"
                 className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-violet-500"
@@ -35,6 +62,7 @@ function Contact() {
               </label>
               <input
                 type="email"
+                name="email"
                 id="email"
                 placeholder="you@example.com"
                 className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-violet-500"
@@ -47,6 +75,7 @@ function Contact() {
               </label>
               <textarea
                 id="message"
+                name="message"
                 rows="5"
                 placeholder="Your message..."
                 className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-violet-500"

@@ -1,15 +1,17 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { MessageCircle } from "lucide-react";
 
 function Navbar() {
+  const navigate = useNavigate();
   const baseLinkStyle = "hover:text-purple-600 transition cursor-pointer";
   const activeLinkStyle = "text-purple-700 font-semibold";
 
   return (
     <nav className="relative flex items-center justify-center px-20 py-4 bg-gradient-to-br from-white to-purple-50 shadow-md">
       {/* Logo - left */}
-      <div className="absolute left-20 font-poppins font-bold text-3xl text-purple-700">
+      <div onClick={()=> navigate('/')} className="absolute cursor-pointer left-20 font-poppins font-bold text-3xl text-purple-700">
         Zaru.dev
       </div>
 
@@ -77,7 +79,7 @@ function Navbar() {
     className="text-purple-700 hover:text-purple-900 transition"
     title="Contact Me"
   >
-    <MessageCircle className=" cursor-pointer" size={28} />
+    <MessageCircle onClick={() => navigate('/contact')} className=" cursor-pointer" size={28} />
   </NavLink>
 </div>
 
