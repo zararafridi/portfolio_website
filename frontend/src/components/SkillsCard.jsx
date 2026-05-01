@@ -1,70 +1,53 @@
-import React from "react";
-import SkillsSVG from "../assets/undraw_visionary-technology_f6b3.svg";
-
 function SkillsCard() {
+  const groups = [
+    {
+      title: "Frontend",
+      values: ["React.js", "Redux Toolkit", "Vite", "HTML5 & CSS3", "Tailwind CSS"],
+    },
+    {
+      title: "Backend",
+      values: ["Node.js", "Express.js", "REST APIs", "JWT Auth"],
+    },
+    {
+      title: "Database & Cloud",
+      values: ["MongoDB", "Firebase", "Appwrite", "Vercel", "GitHub"],
+    },
+    {
+      title: "Collaboration",
+      values: ["Problem Solving", "Team Collaboration", "Communication", "Time Management"],
+    },
+  ];
+
   return (
-    <section className="py-16 px-4 md:px-20">
-      <h1 className="text-4xl md:text-5xl font-bold text-center text-violet-600 mb-12">
+    <section className="py-16">
+      <h2 className="mb-10 text-center text-3xl font-bold text-white sm:text-4xl">
         My Skills
-      </h1>
-
-      <div className="flex flex-col-reverse md:flex-row items-center gap-10">
-        {/* Left Side - Skills List */}
-        <div className="flex-1 pt-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 text-center">
-            {/* Frontend */}
-            <div>
-              <h2 className="text-xl font-semibold text-violet-600 mb-2">Frontend</h2>
-              <ul className="list-disc list-inside text-slate-700 text-lg text-left inline-block">
-                <li>React.js</li>
-                <li>Redux Toolkit</li>
-                <li>Vite</li>
-                <li>HTML5 & CSS3</li>
-                <li>Tailwind CSS</li>
-              </ul>
-            </div>
-
-            {/* Backend */}
-            <div>
-              <h2 className="text-xl font-semibold text-violet-600 mb-2">Backend</h2>
-              <ul className="list-disc list-inside text-slate-700 text-lg text-left inline-block">
-                <li>Node.js</li>
-                <li>Express.js</li>
-                <li>REST APIs</li>
-              </ul>
-            </div>
-
-            {/* Database & Hosting */}
-            <div>
-              <h2 className="text-xl font-semibold text-violet-600 mb-2">Database & Hosting</h2>
-              <ul className="list-disc list-inside text-slate-700 text-lg text-left inline-block">
-                <li>MongoDB</li>
-                <li>Firebase</li>
-                <li>Appwrite</li>
-                <li>Git & GitHub</li>
-              </ul>
-            </div>
-
-            {/* Soft Skills */}
-            <div>
-              <h2 className="text-xl font-semibold text-violet-600 mb-2">Soft Skills</h2>
-              <ul className="list-disc list-inside text-slate-700 text-lg text-left inline-block">
-                <li>Problem Solving</li>
-                <li>Team Collaboration</li>
-                <li>Communication</li>
-                <li>Time Management</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        {/* Right Side - SVG */}
-        <div className="flex-1">
-          <img
-            src={SkillsSVG}
-            alt="Skills Illustration"
-            className="w-full max-w-sm mx-auto"
-          />
+      </h2>
+      <div className="grid gap-6 sm:grid-cols-2">
+        {groups.map((group) => (
+          <article
+            key={group.title}
+            className="rounded-2xl border border-white/10 bg-white/5 p-6 shadow-xl shadow-slate-900/20"
+          >
+            <h3 className="mb-4 text-xl font-semibold text-violet-200">{group.title}</h3>
+            <ul className="flex flex-wrap gap-2">
+              {group.values.map((value) => (
+                <li
+                  key={value}
+                  className="rounded-full border border-violet-300/20 bg-violet-500/10 px-3 py-1.5 text-sm text-slate-200"
+                >
+                  {value}
+                </li>
+              ))}
+            </ul>
+          </article>
+        ))}
+        <div className="rounded-2xl border border-cyan-300/20 bg-cyan-500/10 p-6 sm:col-span-2">
+          <p className="text-sm uppercase tracking-wider text-cyan-200">Engineering mindset</p>
+          <p className="mt-2 text-slate-100">
+            I focus on readable code, component reusability, accessibility, and real-world
+            performance across desktop and mobile devices.
+          </p>
         </div>
       </div>
     </section>

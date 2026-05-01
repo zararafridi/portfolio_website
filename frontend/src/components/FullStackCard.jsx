@@ -1,41 +1,32 @@
-import React from "react";
-import PNG from "../assets/undraw_pair-programming_9jyg.svg";
-
 function FullStackCard() {
+  const items = [
+    "Responsive and accessible UI architecture",
+    "Scalable REST APIs and authentication flows",
+    "Database modeling and clean service layers",
+    "Deployment, monitoring, and iteration",
+  ];
+
   return (
-    <section className="min-h-[70vh] py-16 px-4 md:px-20">
-      <h2 className="text-5xl md:text-7xl font-bold text-center mb-12 text-slate-800">
-        What I Do?
+    <section className="py-16">
+      <h2 className="text-center text-3xl font-bold text-white sm:text-4xl">
+        What I Deliver
       </h2>
-
-      <div className="flex flex-col md:flex-row items-center gap-10">
-        {/* Image Section */}
-        <div className="flex-1">
-          <img
-            src={PNG}
-            alt="Full Stack Illustration"
-            className="w-full max-w-md mx-auto"
-          />
+      <div className="mt-10 grid gap-6 md:grid-cols-2">
+        <div className="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur">
+          <h3 className="text-2xl font-semibold text-violet-200">End-to-End Development</h3>
+          <p className="mt-4 text-slate-300">
+            I build full-stack products from idea to deployment with a focus on clean
+            code, smooth UX, and business-ready performance.
+          </p>
         </div>
-
-        {/* Text Content */}
-        <div className="flex-1 space-y-5 text-center md:text-left">
-          <h3 className="text-3xl md:text-5xl font-semibold text-violet-600">
-            Full Stack Web Development
-          </h3>
-          <p className="text-lg text-slate-700">
-            I specialize in building responsive, dynamic web applications using
-            <span className="font-semibold"> React.js, Redux Toolkit, and Tailwind CSS</span> on the frontend.
-          </p>
-          <p className="text-lg text-slate-700">
-            For the backend, I use <span className="font-semibold">Node.js, Express.js</span>, and secure
-            REST APIs — all connected to robust databases like
-            <span className="font-semibold"> MongoDB & Appwrite</span>.
-          </p>
-          <p className="text-lg text-slate-700">
-            My workflow includes tools like <span className="font-semibold">Git, Postman, JWT, Firebase</span>, and
-            <span className="font-semibold"> Vercel</span> to ensure smooth development and deployment.
-          </p>
+        <div className="rounded-2xl border border-white/10 bg-slate-900/70 p-6">
+          <ul className="space-y-3 text-slate-200">
+            {items.map((item) => (
+              <li key={item} className="rounded-lg border border-violet-300/20 bg-violet-500/10 px-4 py-3">
+                {item}
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
     </section>

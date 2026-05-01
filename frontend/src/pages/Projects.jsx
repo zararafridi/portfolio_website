@@ -1,4 +1,3 @@
-import React from "react";
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 
 const projects = [
@@ -31,33 +30,27 @@ const projects = [
 
 function Projects() {
   return (
-    <section className="py-20 px-4 md:px-20 bg-gray-50" id="projects">
-      <div className="text-center mb-12">
-        <h2 className="text-4xl font-extrabold text-purple-700">My Projects</h2>
-        <p className="text-gray-600 text-lg mt-2">
+    <section className="animate-fade-up py-8" id="projects">
+      <div className="mb-12 text-center">
+        <h2 className="text-4xl font-extrabold text-white">My Projects</h2>
+        <p className="mt-2 text-lg text-slate-300">
           Real-world applications built with the MERN stack & modern tools.
         </p>
       </div>
-
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
         {projects.map((project, idx) => (
           <div
             key={idx}
-            className="bg-white shadow-md rounded-xl p-6 flex flex-col justify-between hover:shadow-xl transition-all duration-300"
+            className="flex flex-col justify-between rounded-2xl border border-white/10 bg-white/5 p-6 shadow-xl shadow-slate-900/30 transition hover:-translate-y-1"
           >
             <div>
-              <h3 className="text-2xl font-semibold text-purple-600 mb-2">
-                {project.title}
-              </h3>
-              <p className="text-gray-700 text-base mb-4">
-                {project.description}
-              </p>
-
-              <div className="flex flex-wrap gap-2 mb-4">
+              <h3 className="mb-2 text-2xl font-semibold text-violet-200">{project.title}</h3>
+              <p className="mb-4 text-base text-slate-300">{project.description}</p>
+              <div className="mb-4 flex flex-wrap gap-2">
                 {project.tech.map((tech, i) => (
                   <span
                     key={i}
-                    className="bg-purple-100 text-purple-700 px-3 py-1 text-sm rounded-full font-medium"
+                    className="rounded-full border border-violet-300/25 bg-violet-500/10 px-3 py-1 text-sm font-medium text-violet-100"
                   >
                     {tech}
                   </span>
@@ -70,7 +63,7 @@ function Projects() {
                 href={project.codeLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-700 hover:text-purple-600 text-lg transition"
+                className="text-lg text-slate-200 transition hover:text-violet-300"
                 title="View Code"
               >
                 <FaGithub />
@@ -80,7 +73,7 @@ function Projects() {
                   href={project.liveLink}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-700 hover:text-purple-600 text-lg transition"
+                  className="text-lg text-slate-200 transition hover:text-violet-300"
                   title="View Live"
                 >
                   <FaExternalLinkAlt />
