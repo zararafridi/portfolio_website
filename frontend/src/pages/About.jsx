@@ -5,15 +5,16 @@ function About() {
   return (
     <section className="animate-fade-up min-h-screen py-8">
       <div className="mb-12 text-center">
-        <h1 className="text-4xl font-extrabold text-white">About Me</h1>
+        <p className="terminal-heading mb-2">// about</p>
+        <h1 className="font-mono text-4xl font-extrabold text-white">$ cat about.md</h1>
         <p className="mt-2 text-lg text-slate-300">
           Full-stack Developer • Lifelong Learner • Problem Solver
         </p>
       </div>
-      <div className="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur sm:p-8">
-        <h2 className="mb-4 text-2xl font-bold text-violet-200">Who I am</h2>
+      <div className="terminal-panel p-6 sm:p-8">
+        <h2 className="mb-4 font-mono text-2xl font-bold text-emerald-200">Who I am</h2>
         <p className="text-lg leading-relaxed text-slate-200">
-          I am <span className="font-semibold text-violet-300">Zarar Afridi</span>, a MERN stack
+          I am <span className="font-semibold text-emerald-300">Zarar Afridi</span>, a MERN stack
           developer focused on building reliable, performant products with clean user
           experience and maintainable backend architecture.
         </p>
@@ -23,25 +24,25 @@ function About() {
         </p>
       </div>
       <div className="mt-16">
-        <h2 className="mb-8 text-center text-3xl font-bold text-white">What I Bring</h2>
+        <h2 className="mb-8 text-center font-mono text-3xl font-bold text-white">What I Bring</h2>
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
-          <div className="rounded-xl border border-white/10 bg-white/5 p-6">
-            <FaReact className="mb-4 text-4xl text-violet-300" />
+          <div className="terminal-panel p-6">
+            <FaReact className="mb-4 text-4xl text-emerald-300" />
             <h3 className="mb-2 text-xl font-semibold text-white">Frontend</h3>
             <p className="text-slate-300">React, Redux, Tailwind, Vite</p>
           </div>
-          <div className="rounded-xl border border-white/10 bg-white/5 p-6">
-            <FaNode className="mb-4 text-4xl text-violet-300" />
+          <div className="terminal-panel p-6">
+            <FaNode className="mb-4 text-4xl text-emerald-300" />
             <h3 className="mb-2 text-xl font-semibold text-white">Backend</h3>
             <p className="text-slate-300">Node.js, Express, REST APIs</p>
           </div>
-          <div className="rounded-xl border border-white/10 bg-white/5 p-6">
-            <FaDatabase className="mb-4 text-4xl text-violet-300" />
+          <div className="terminal-panel p-6">
+            <FaDatabase className="mb-4 text-4xl text-emerald-300" />
             <h3 className="mb-2 text-xl font-semibold text-white">Database</h3>
             <p className="text-slate-300">MongoDB, Firebase, Appwrite</p>
           </div>
-          <div className="rounded-xl border border-white/10 bg-white/5 p-6">
-            <FaUserTie className="mb-4 text-4xl text-violet-300" />
+          <div className="terminal-panel p-6">
+            <FaUserTie className="mb-4 text-4xl text-emerald-300" />
             <h3 className="mb-2 text-xl font-semibold text-white">Soft Skills</h3>
             <p className="text-slate-300">Teamwork, Communication, Time Management</p>
           </div>
@@ -54,7 +55,7 @@ function About() {
         </p>
         <NavLink
           to="/contact"
-          className="inline-block rounded-full bg-violet-500 px-7 py-3 font-semibold text-white transition hover:bg-violet-400"
+          className="terminal-button-primary inline-block"
         >
           Let us connect
         </NavLink>

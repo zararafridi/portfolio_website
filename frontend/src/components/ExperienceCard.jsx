@@ -3,14 +3,15 @@ import { FaBriefcase } from "react-icons/fa";
 function ExperienceCard() {
   return (
     <section className="py-16">
-      <h2 className="mb-10 text-center text-3xl font-bold text-white sm:text-4xl">
-        Experience
+      <p className="terminal-heading mb-2 text-center">// experience</p>
+      <h2 className="mb-10 text-center font-mono text-3xl font-bold text-white sm:text-4xl">
+        $ cat experience.log
       </h2>
       <div className="mx-auto max-w-4xl space-y-8">
-        <div className="rounded-2xl border border-white/10 bg-white/5 p-6 transition hover:-translate-y-1">
+        <div className="terminal-panel p-6 transition hover:-translate-y-1">
           <div className="mb-2 flex items-center gap-4">
-            <FaBriefcase className="text-2xl text-violet-300" />
-            <h3 className="text-xl font-semibold text-white">
+            <FaBriefcase className="text-2xl text-emerald-300" />
+            <h3 className="font-mono text-xl font-semibold text-white">
               Full Stack Developer – Freelance
             </h3>
           </div>

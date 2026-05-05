@@ -34,13 +34,14 @@ function Contact() {
   return (
     <section className="animate-fade-up min-h-screen py-8" id="contact">
       <div className="mb-12 text-center">
-        <h1 className="text-4xl font-extrabold text-white">Get in Touch</h1>
+        <p className="terminal-heading mb-2">// contact</p>
+        <h1 className="font-mono text-4xl font-extrabold text-white">$ ./new_message.sh</h1>
         <p className="mt-2 text-lg text-slate-300">
-          Feel free to reach out for collaborations or just a friendly hello 👋
+          Feel free to reach out for collaborations or product partnerships.
         </p>
       </div>
       <div className="grid grid-cols-1 gap-10 md:grid-cols-2">
-        <div className="rounded-2xl border border-white/10 bg-white/5 p-8 backdrop-blur">
+        <div className="terminal-panel p-8">
           <form ref={form} onSubmit={sendEmail} className="flex flex-col gap-6">
             <div>
               <label htmlFor="name" className="mb-2 block font-medium text-slate-200">
@@ -52,7 +53,7 @@ function Contact() {
                 id="name"
                 required
                 placeholder="Your Name"
-                className="w-full rounded-lg border border-white/20 bg-slate-900/60 px-4 py-3 text-slate-100 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-violet-400"
+                className="w-full rounded-md border border-emerald-300/20 bg-slate-900/70 px-4 py-3 text-slate-100 placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-emerald-400"
               />
             </div>
             <div>
@@ -65,7 +66,7 @@ function Contact() {
                 id="email"
                 required
                 placeholder="you@example.com"
-                className="w-full rounded-lg border border-white/20 bg-slate-900/60 px-4 py-3 text-slate-100 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-violet-400"
+                className="w-full rounded-md border border-emerald-300/20 bg-slate-900/70 px-4 py-3 text-slate-100 placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-emerald-400"
               />
             </div>
             <div>
@@ -78,13 +79,13 @@ function Contact() {
                 rows="5"
                 required
                 placeholder="Your message..."
-                className="w-full rounded-lg border border-white/20 bg-slate-900/60 px-4 py-3 text-slate-100 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-violet-400"
+                className="w-full rounded-md border border-emerald-300/20 bg-slate-900/70 px-4 py-3 text-slate-100 placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-emerald-400"
               />
             </div>
             <button
               type="submit"
               disabled={isSending}
-              className="rounded-lg bg-violet-500 px-6 py-3 font-semibold text-white transition hover:bg-violet-400 disabled:cursor-not-allowed disabled:opacity-60"
+              className="terminal-button-primary disabled:cursor-not-allowed disabled:opacity-60"
             >
               {isSending ? "Sending..." : "Send Message"}
             </button>
@@ -101,11 +102,11 @@ function Contact() {
         </div>
         <div className="flex flex-col justify-center">
           <div className="mb-6 flex items-center gap-4 text-slate-200">
-            <FaEnvelope className="text-2xl text-violet-300" />
+            <FaEnvelope className="text-2xl text-emerald-300" />
             <span className="text-lg">zararafridi9091@gmail.com</span>
           </div>
           <div className="mb-6 flex items-center gap-4 text-slate-200">
-            <FaMapMarkerAlt className="text-2xl text-violet-300" />
+            <FaMapMarkerAlt className="text-2xl text-emerald-300" />
             <span className="text-lg">Peshawar, Pakistan</span>
           </div>
           <div className="mt-6 flex items-center gap-6">
@@ -114,7 +115,7 @@ function Contact() {
               target="_blank"
               rel="noopener noreferrer"
               title="GitHub"
-              className="text-slate-200 transition hover:text-violet-300"
+              className="text-slate-200 transition hover:text-emerald-300"
             >
               <FaGithub className="text-3xl" />
             </a>
@@ -123,12 +124,12 @@ function Contact() {
               target="_blank"
               rel="noopener noreferrer"
               title="LinkedIn"
-              className="text-slate-200 transition hover:text-violet-300"
+              className="text-slate-200 transition hover:text-emerald-300"
             >
               <FaLinkedin className="text-3xl" />
             </a>
           </div>
-          <div className="mt-8 rounded-xl border border-violet-300/20 bg-violet-500/10 p-5 text-slate-200">
+          <div className="mt-8 rounded-md border border-emerald-300/20 bg-emerald-500/10 p-5 text-slate-200">
             Typically replies within 24 hours. For urgent work, include project timeline and
             budget range in your message.
           </div>
