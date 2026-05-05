@@ -1,37 +1,33 @@
-import React from "react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 function Footer() {
   return (
-    <footer className="bg-gradient-to-br from-white to-purple-50 shadow-inner px-20 py-6">
-      <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-        {/* Left - Branding */}
-        <div className="text-purple-700 font-bold text-2xl font-poppins">
-          Zaru.dev
+    <footer className="border-t border-emerald-300/15 bg-slate-950/80 backdrop-blur">
+      <div className="mx-auto flex w-full max-w-6xl flex-col items-center justify-between gap-5 px-4 py-8 text-center sm:px-6 md:flex-row md:text-left lg:px-8">
+        <div className="font-mono text-base font-bold tracking-tight text-emerald-100">
+          zarafridi<span className="text-emerald-400"> --portfolio</span>
         </div>
-
-        {/* Center - Copyright */}
-        <div className="text-gray-600 text-sm text-center md:text-left">
-          © {new Date().getFullYear()} Zarar Afridi — All rights reserved.
+        <div className="text-sm text-slate-400">
+          © {new Date().getFullYear()} Zarar Afridi. Built with React and Tailwind.
         </div>
-
-        {/* Right - Social Icons */}
-        <div className="flex gap-6 items-center">
+        <div className="flex items-center gap-5">
           <a
             href="https://github.com/zararafridi"
             target="_blank"
             rel="noopener noreferrer"
             title="GitHub"
+            className="text-slate-300 transition hover:text-emerald-300"
           >
-            <FaGithub className="text-xl text-gray-700 hover:text-purple-600 transition" />
+            <FaGithub className="text-xl" />
           </a>
           <a
             href="https://linkedin.com/in/zararafridi"
             target="_blank"
             rel="noopener noreferrer"
             title="LinkedIn"
+            className="text-slate-300 transition hover:text-emerald-300"
           >
-            <FaLinkedin className="text-xl text-gray-700 hover:text-purple-600 transition" />
+            <FaLinkedin className="text-xl" />
           </a>
         </div>
       </div>
